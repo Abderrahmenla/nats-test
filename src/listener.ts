@@ -24,6 +24,7 @@ stan.on('connect', () => {
     'ticket:created',
     'queue-group-name',
     options);
+  
   subscription.on('message', (msg: Message) => {
     const data = msg.getData();
     if (typeof data === 'string') console.log(`Received event number #${msg.getSequence()},with data : ${data}`);
